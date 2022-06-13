@@ -1,0 +1,15 @@
+<?php
+include_once '../src/Service/Favorite/buildPreview.php';
+include_once '../src/Service/Favorite/existsAlreadyHref.php';
+
+function buildFavoritesXhr(array &$favorites): array
+{
+    foreach ($favorites as &$favorite) {
+        $slashExplode = explode("/", $favorite["href"]);
+        $host = $slashExplode[2];
+        $favorite["favicon"] = $slashExplode[0] . "//" . $host . "/favicon.ico";
+        $favorite["preview"] = buildPreview($host, $favorite["href"]);
+        $favorite["has"] = existsAlreadyHref($favorites);
+    }
+    return $favorites;
+}

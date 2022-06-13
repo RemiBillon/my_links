@@ -1,0 +1,15 @@
+{
+    "name": "remi/my-links",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "RemiBillon",
+            "email": "remi.billon@gmail.com"
+        }
+    ],
+    "require": {
+      "ext-json": "*"
+    },
+    "description": ""
+}
